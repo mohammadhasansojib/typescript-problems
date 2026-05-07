@@ -1,18 +1,15 @@
 # Blog Post 1
 
-### Why is `any` labeled a "type safety hole" and why is unknown the safer choice for handling unpredictable data? Below explaining the concept of type narrowing.
+Why is `any` labeled a "type safety hole" and why is unknown the safer choice for handling unpredictable data? Below explaining the concept of type narrowing.
 
 ## Table of content
 
-[Introduction](#introduction)
-
-[Type `any`](#type-any)
-
-[Type `unknown`](#type-unknown)
-
-[Type narrowing](#type-narrowing)
-
-[Colclusion](#conclusion)
+- [Introduction](#introduction)
+- [Main Content](#main-content)
+    - [Type `any`](#type-any)
+    - [Type `unknown`](#type-unknown)
+    - [Type narrowing](#type-narrowing)
+- [Colclusion](#conclusion)
 
 
 
@@ -20,7 +17,10 @@
 
 In typescript, `any` and `unknown` types seems to be similar like they both is not defined and there could be any type of data. But even thorugh they looks similar from top view there are some important difference between these two types.
 
-## Type `any`
+
+## Main Content
+
+### Type `any`
 
 Type `any` is something like you can use any type of data and use it anywhere you want. It will not prevent you from any use cases in compile time. But it can get into error in runtime. Because it does not check if the data type matches how we are using it or not.
 
@@ -35,7 +35,7 @@ const user: any = {
 console.log(user.address);
 ```
 
-## Type `unknown`
+### Type `unknown`
 
 On the other hand when we use `unknown` to any variable, function return or anywhere, it says that ok you can assign whatever type of data you want but you can not use it anywere without type checking. Then we have create a type gaurd and narrow the types before the usage of `unknown` data type. It prevents us from runtime error which is better that type `any`. 
 
@@ -56,7 +56,7 @@ if(typeof user === "object") {
 }
 ```
 
-## Type narrowing
+### Type narrowing
 
 Type narrowing is mainly the concept of narrowing the type before usage. Below is an example code of type narrowing:
 
